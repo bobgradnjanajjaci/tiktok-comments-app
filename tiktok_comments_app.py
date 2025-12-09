@@ -334,7 +334,9 @@ def index():
         service_id=SERVICE_ID,
     )
 
+import os
+
 if __name__ == "__main__":
-    # 🔥 Ovo omogućava da radi i lokalno i na hostingu (Railway, Render, itd.)
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port)
+    port = int(os.environ.get("PORT", 5000))  # Railway će ovdje ubaciti npr. 8880
+    app.run(host="0.0.0.0", port=port, debug=False)
+
